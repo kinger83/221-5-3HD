@@ -24,7 +24,7 @@ namespace MinDequesNumber
             for (int i = 1; i < data.Length; i++)
             {
                 // Setup variables to send and recieve from Determin Action
-                int[] actionArray = DeterminAction(data, i);
+                int[] actionArray = DeterminAction1(data, i);
                 int action = actionArray[0];
                 switch (action)
                 {
@@ -56,9 +56,22 @@ namespace MinDequesNumber
         }// end solve
 
 
+        private static int[] DeterminAction2(int[] data, int index)
+        {
+            // calculate how many deques needed
+            for (int i = 0; i < data.Length; i++)
+            {
+
+            }
 
 
-        private static int[] DeterminAction(int[] data, int index)
+
+
+            // temp retunr to block errors
+            return new int[] { 0, 0 };
+        }// end determinAction
+
+        private static int[] DeterminAction1(int[] data, int index)
         {
             // declare result array
             int[] result = new int[2];
@@ -146,53 +159,67 @@ namespace MinDequesNumber
                 }
 
 
-
-
-
-                // // check if value to process is higher than value at top of deque
-                // if (toJudge > currentHigh)
-                // {
-                //     bool inbetweenFound = false;
-                //     // check for a value inbetween, if found set found bool to true
-                //     for (int j = index + 1; j < data.Count(); j++)
-                //     {
-                //         if (data[j] > currentHigh && data[j] < toJudge)
-                //         {
-                //             inbetweenFound = true;
-                //         }
-                //     }
-                //     // If not inbetween found return result
-                //     if (!inbetweenFound)
-                //     {
-                //         result = new int[] { 1, i };
-                //         return result;
-                //     }
-                // }
-
-                // // check if value to process is lower than value at bottom of deque
-                // else if (toJudge < currentLow)
-                // {
-                //     bool inbetweenFound = false;
-                //     // check for a value inbetween, if found set found bool to true
-                //     for (int j = index + 1; j < data.Count(); j++)
-                //     {
-                //         if (data[j] < currentLow && data[j] > toJudge)
-                //         {
-                //             inbetweenFound = true;
-                //         }
-                //     }
-                //     // If not inbetween found return result
-                //     if (!inbetweenFound)
-                //     {
-                //         result = new int[] { 2, i };
-                //         return result;
-                //     }
-                // }
             }
             result = new int[] { 3, -1 };
             return result;
         }// end determinAction
 
+        private static int[] DeterminAction(int[] data, int index)
+        {
+            // declare result array
+            int[] result = new int[2];
+
+
+            // do algorithms
+            for (int i = 0; i < deques.Count; i++)
+            {
+                // check if to judge is higher or lower than current deque
+                int currentHigh = deques[i].Last.Value;
+                int currentLow = deques[i].First.Value;
+                int toJudge = data[index];
+                // check if value to process is higher than value at top of deque
+                if (toJudge > currentHigh)
+                {
+                    bool inbetweenFound = false;
+                    // check for a value inbetween, if found set found bool to true
+                    for (int j = index + 1; j < data.Count(); j++)
+                    {
+                        if (data[j] > currentHigh && data[j] < toJudge)
+                        {
+                            inbetweenFound = true;
+                        }
+                    }
+                    // If not inbetween found return result
+                    if (!inbetweenFound)
+                    {
+                        result = new int[] { 1, i };
+                        return result;
+                    }
+                }
+
+                // check if value to process is lower than value at bottom of deque
+                else if (toJudge < currentLow)
+                {
+                    bool inbetweenFound = false;
+                    // check for a value inbetween, if found set found bool to true
+                    for (int j = index + 1; j < data.Count(); j++)
+                    {
+                        if (data[j] < currentLow && data[j] > toJudge)
+                        {
+                            inbetweenFound = true;
+                        }
+                    }
+                    // If not inbetween found return result
+                    if (!inbetweenFound)
+                    {
+                        result = new int[] { 2, i };
+                        return result;
+                    }
+                }
+            }
+            result = new int[] { 3, -1 };
+            return result;
+        }// end determinAction
         private static void PrintDeques()
         {
             string toPrint = "";
