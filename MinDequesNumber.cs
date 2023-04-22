@@ -55,6 +55,9 @@ namespace MinDequesNumber
 
         }// end solve
 
+
+
+
         private static int[] DeterminAction(int[] data, int index)
         {
             // declare result array
@@ -64,11 +67,45 @@ namespace MinDequesNumber
             // do algorithms
             for (int i = 0; i < deques.Count; i++)
             {
-                // check if to judge is higher or lower than current deque
-                int currentHigh = deques[i].Last.Value;
-                int currentLow = deques[i].First.Value;
+                // find which deque to use
+                int currentHigh = 0;
+                int currentLow = 0;
                 int toJudge = data[index];
-                // check if value to process is higher than value at top of deque
+
+                int dequeToUseIndex = -1;
+                int minDiff = 50000000;
+                // find deque value is closest to
+                for (int j = 0; j < deques.Count; j++)
+                {
+                    if (toJudge > deques[j].Last.Value)
+                    {
+                        if (Math.Abs(toJudge - deques[j].Last.Value) < Math.Abs(minDiff))
+                        {
+                            minDiff = toJudge - deques[j].Last.Value;
+                            dequeToUseIndex = j;
+                            currentHigh = deques[j].Last.Value;
+                            currentLow = deques[j].First.Value;
+                        }
+
+                    }
+
+                    if (toJudge < deques[j].First.Value)
+                    {
+                        if (Math.Abs(deques[j].First.Value - toJudge) < Math.Abs(minDiff))
+                        {
+                            minDiff = toJudge - deques[j].First.Value;
+                            dequeToUseIndex = j;
+                            currentHigh = deques[j].Last.Value;
+                            currentLow = deques[j].First.Value;
+                        }
+
+                    }
+                } // end forloop finding correct deque
+
+
+
+
+                // process current value on selected deque
                 if (toJudge > currentHigh)
                 {
                     bool inbetweenFound = false;
@@ -83,7 +120,7 @@ namespace MinDequesNumber
                     // If not inbetween found return result
                     if (!inbetweenFound)
                     {
-                        result = new int[] { 1, i };
+                        result = new int[] { 1, dequeToUseIndex };
                         return result;
                     }
                 }
@@ -103,10 +140,54 @@ namespace MinDequesNumber
                     // If not inbetween found return result
                     if (!inbetweenFound)
                     {
-                        result = new int[] { 2, i };
+                        result = new int[] { 2, dequeToUseIndex };
                         return result;
                     }
                 }
+
+
+
+
+
+                // // check if value to process is higher than value at top of deque
+                // if (toJudge > currentHigh)
+                // {
+                //     bool inbetweenFound = false;
+                //     // check for a value inbetween, if found set found bool to true
+                //     for (int j = index + 1; j < data.Count(); j++)
+                //     {
+                //         if (data[j] > currentHigh && data[j] < toJudge)
+                //         {
+                //             inbetweenFound = true;
+                //         }
+                //     }
+                //     // If not inbetween found return result
+                //     if (!inbetweenFound)
+                //     {
+                //         result = new int[] { 1, i };
+                //         return result;
+                //     }
+                // }
+
+                // // check if value to process is lower than value at bottom of deque
+                // else if (toJudge < currentLow)
+                // {
+                //     bool inbetweenFound = false;
+                //     // check for a value inbetween, if found set found bool to true
+                //     for (int j = index + 1; j < data.Count(); j++)
+                //     {
+                //         if (data[j] < currentLow && data[j] > toJudge)
+                //         {
+                //             inbetweenFound = true;
+                //         }
+                //     }
+                //     // If not inbetween found return result
+                //     if (!inbetweenFound)
+                //     {
+                //         result = new int[] { 2, i };
+                //         return result;
+                //     }
+                // }
             }
             result = new int[] { 3, -1 };
             return result;
