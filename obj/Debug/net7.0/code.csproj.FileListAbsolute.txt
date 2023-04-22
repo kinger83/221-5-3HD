@@ -1,0 +1,15 @@
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\bin\Debug\net7.0\code.exe
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\bin\Debug\net7.0\code.deps.json
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\bin\Debug\net7.0\code.runtimeconfig.json
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\bin\Debug\net7.0\code.dll
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\bin\Debug\net7.0\code.pdb
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.csproj.AssemblyReference.cache
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.AssemblyInfoInputs.cache
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.AssemblyInfo.cs
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.csproj.CoreCompileInputs.cache
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.dll
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\refint\code.dll
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.pdb
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\code.genruntimeconfig.cache
+C:\Users\kinge\OneDrive\Deakin\SIT221- Data Stuctures and Algorithms\Tasks\5-3H Searching the minimum number of dequs\code\obj\Debug\net7.0\ref\code.dll
